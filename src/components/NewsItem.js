@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"; 
 
 export class NewsItem extends Component {
   render() {
@@ -6,7 +6,7 @@ export class NewsItem extends Component {
     return (
       <div>
         <div className="card my-3" style={{width: "18rem"}}>
-          <img src={imageUrl} className="card-img-top" alt="" />
+          <img src={!imageUrl?"https://previews.123rf.com/images/alhovik/alhovik1709/alhovik170900030/86470279-breaking-news-background-world-global-tv-news-banner-design.jpg?fj=1":imageUrl} className="card-img-top" alt="" />
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">
