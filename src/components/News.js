@@ -24,7 +24,7 @@ export class News extends Component {
   }
   async componentDidMount() {
     let url =
-      `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4dda09d8e7cb490ab6071a64c40b833c&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+      `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=36e7946b2ec345b2b30c48b2f183616f&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({ articles: parsedData.articles , totalResults:parsedData.totalResults ,loading:false});
@@ -33,7 +33,7 @@ export class News extends Component {
   {
     console.log("next")
     let url =
-    `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4dda09d8e7cb490ab6071a64c40b833c&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
+    `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=36e7946b2ec345b2b30c48b2f183616f&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
     this.setState({loading:true})
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -46,7 +46,7 @@ export class News extends Component {
   handlePrev=async()=>
   {
     let url =
-    `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=4dda09d8e7cb490ab6071a64c40b833c&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
+    `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=36e7946b2ec345b2b30c48b2f183616f&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
     this.setState({loading:true})
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -70,6 +70,9 @@ export class News extends Component {
                   description={element.description}
                   imageUrl={element.urlToImage}
                   url={element.url}
+                  author={element.author}
+                  date={element.publishedAt}
+                  source={element.source}
                 />
               </div>
             );
