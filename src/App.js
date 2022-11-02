@@ -11,7 +11,7 @@ import {
 
 const App =()=>{
   // apiKey = process.env.REACT_APP_NEWS_API
-  const apiKey="36e7946b2ec345b2b30c48b2f183616f"
+  const apiKey="4dda09d8e7cb490ab6071a64c40b833c"
   const [progress, setProgress] = useState(0)
     return (
       <div>
@@ -22,7 +22,7 @@ const App =()=>{
             color='#f11946'
             progress={progress}
           />
-          <News setProgress={setProgress} apiKey={apiKey}  pageSize={6} key="sports" country="in" category="general"/>
+          {/* <News setProgress={setProgress} apiKey={apiKey}  pageSize={6} key="sports" country="in" category="general"/> */}
         <Routes >
           <Route path="/" element={<News setProgress={setProgress} apiKey={apiKey}  pageSize={6} key="sports" country="in" category="general"/>}/>
           <Route path="/business" element={<News setProgress={setProgress} apiKey={apiKey}  pageSize={6} key="Business" country="in" category="Business"/>}/>

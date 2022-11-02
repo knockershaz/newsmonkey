@@ -16,7 +16,7 @@ const updateNews=async()=> {
   props.setProgress(10);
   let url =
   // `https://newsapi.org/v2/everything?q=tesla&from=2022-10-01&sortBy=publishedAt&apiKey=36e7946b2ec345b2b30c48b2f183616f`
-  `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=36e7946b2ec345b2b30c48b2f183616f&page=${page}&pageSize=${props.pageSize}`;
+  `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
   setloading(true)
 let data = await fetch(url);
 props.setProgress(30);
@@ -37,7 +37,7 @@ useEffect(() => {
   const fetchMoreData = async() => {
     let url =
     // `https://newsapi.org/v2/everything?q=tesla&from=2022-10-01&sortBy=publishedAt&apiKey=36e7946b2ec345b2b30c48b2f183616f`
-    `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=36e7946b2ec345b2b30c48b2f183616f&page=${page}&pageSize=${props.pageSize}`;
+    `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     setpage(page+1);
   let data = await fetch(url);
   let parsedData = await data.json();
